@@ -11,26 +11,24 @@ const styLeWeather = StyleSheet.create({
     inCity:{
         borderWidth:2,
         borderRadius:10,
-        backgroundColor:'#00E07F',
-        borderBottomColor:'#06BA63',
+        backgroundColor:'#202020',
         borderBottomWidth:2,
         width:'90%',
         margin:5,
         alignSelf:'center'
     },
     inCountry:{
-        borderWidth:2,
-        borderRadius:10,
-        borderColor:"#06BA63",
+        fontSize:18,
+        fontWeight:'800',
         height: 100,
-        backgroundColor:'#00E07F',
-        margin:5,
+        backgroundColor:'#202020',
+        margin:15,
         color:'white'
     },
     inButton:{
         borderWidth:2,
-        borderRadius:10,
-        backgroundColor:'#00E07F',
+        borderRadius:5,
+        backgroundColor:'#202020',
         justifyContent:'center',
         alignSelf:'center',
         margin:10
@@ -43,8 +41,8 @@ const styLeWeather = StyleSheet.create({
     },
     txtShadow:{
         textShadowColor:'black',
-        textShadowOffset:{wdith: -2, height:-2},
-        textShadowRadius:6,
+        textShadowOffset:{wdith: 3, height:3},
+        textShadowRadius:4,
     },
     weatherContainer:{
         flex:1,
@@ -59,8 +57,10 @@ const styLeWeather = StyleSheet.create({
         flexDirection:'row'
     },
     backImg:{
+        borderWidth:3,
+        borderRadius:10,
         flex:1,
-        width:'95%',
+        width:'100%',
         resizeMode:'cover',
     },
     iconImg:{
@@ -70,16 +70,21 @@ const styLeWeather = StyleSheet.create({
     },
     txtData:{
         color:'white',
-        fontSize:14
+        fontSize:18,
+        fontFamily:Platform.OS === 'ios' ? 'Arial-BoldMT' : 'monospace',
     },
     txtTemp:{
         color:'white',
-        fontSize:34
+        fontSize:28,
+        fontWeight:'bold',
+        fontFamily:Platform.OS === 'ios' ? 'Arial-BoldMT' : 'monospace',
     },
     txtCity:{
         color:'white',
-        fontSize:30,
-        fontWeight:'bold'
+        fontSize:38,
+        fontWeight:'bold',
+        textAlign:'center',
+        fontFamily:Platform.OS === 'ios' ? 'Arial-BoldMT' : 'monospace',
     }
 });
 

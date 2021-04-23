@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import {
-  Platform,
+  ImageBackground,
   Text,
   View,
   Keyboard,
@@ -22,9 +22,9 @@ export default function App() {
   // Descomposicion del state form
   const { city, country } = form;
 
-// Color de fondo en base a temperatura
- const [bgColor,setBgColor] = useState('#8CFBDE');
- const appBgColor = {backgroundColor:bgColor};
+  // Color de fondo en base a temperatura
+  const [bgColor, setBgColor] = useState('#e0e0e0');
+  const appBgColor = { backgroundColor: bgColor };
 
   // Uso de useEffect para hacer uso de la llamada.
   useEffect(() => {
@@ -38,14 +38,16 @@ export default function App() {
           const weatherData = await answer.json();
           setAnsWeather(weatherData);
           setFlag(false);
-          const {main} = weatherData;
+          const { main } = weatherData;
           const temp = main.temp;
-          if(temp<10){
+          if (temp < 8) {
             setBgColor('#87BFFF');
-          }else if(temp<28){
+          } else if (temp < 24) {
             setBgColor('#28eb66');
-          }else{
+          } else if (temp < 31) {
             setBgColor('#fa7725')
+          } else {
+            setBgColor('#d32f2f')
           }
         } catch (error) {
           Alert.alert('Error', 'No se pudieron obtener los datos del clima', [{ text: 'OK' }]);
@@ -55,12 +57,18 @@ export default function App() {
     };
     getWeather();
   }, [flag]);
+
+
+
   return (
     <>
       <TouchableWithoutFeedback
-      onPress={()=>Keyboard.dismiss()}
+        onPress={() => Keyboard.dismiss()}
       >
-        <View style={[styleWeather.container,appBgColor]}>
+        <View style={[styleWeather.container, appBgColor]}>
+          <View style={{ borderBottomWidth: 2, borderRadius: 15, flex: 0.1 }}>
+            <Text style={[styleWeather.txtShadow, styleWeather.txtCity, { fontSize: 30, textAlign: 'center' }]}>Aplicación del Clima</Text>
+          </View>
           <Weather ansWeather={ansWeather} />
           <Form
             form={form} setForm={setForm} setFlag={setFlag}

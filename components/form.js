@@ -68,13 +68,13 @@ const Form = ({form, setForm,setFlag}) => {
                 selectedValue={country}
                 onValueChange={(country)=>setForm({...form, country})}
                 style={styleWeather.inCountry}>
-                    <Picker.Item value="" label="Seleciona un país ←" />
-                    <Picker.Item value="MX" label="México" />
-                    <Picker.Item value="US" label="Estados Unidos" />
-                    <Picker.Item value="UK" label="Reino Unido" />
-                    <Picker.Item value="JP" label="Japón" />
-                    <Picker.Item value="RU" label="Rusia" />
-                    <Picker.Item value="KP" label="Corea del Norte" />
+                    <Picker.Item value="" label="Seleciona un país ←"/>
+                    <Picker.Item value="MX" label="México"/>
+                    <Picker.Item value="US" label="Estados Unidos"/>
+                    <Picker.Item value="UK" label="Reino Unido"/>
+                    <Picker.Item value="JP" label="Japón"/>
+                    <Picker.Item value="CO" label="Colombia"/>
+                    <Picker.Item value="CL" label="Chile"/>
                 </Picker>
             </View>
             <TouchableWithoutFeedback
