@@ -28,7 +28,7 @@ const Weather = ({ansWeather}) => {
             styleWeather.weatherContainer
         }>
             <ImageBackground
-                source={{uri:`https://hosting.photobucket.com/images/i/zeyanriko/${iconID}.png`}}style={styleWeather.backImg}>
+                source={{uri:`https://github.com/DarkZeyan/Aplicaci-n-del-clima-JEEB-6E-CBTis-122/blob/main/assets/${iconID}.png?raw=true`}}style={styleWeather.backImg}>
                 <View>
                     <Text style={[styleWeather.txtCity,styleWeather.txtShadow]}>{name}</Text>
                 </View>
